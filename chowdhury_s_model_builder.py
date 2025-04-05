@@ -1,6 +1,16 @@
 import keras
-# import tensorflow_addons as tfa
+import os
+import tensorflow
 
+# Enable memory fragmentation mitigation
+os.environ['TF_GPU_ALLOCATOR'] = 'cuda_malloc_async'
+
+# Use mixed precision
+# https://keras.io/api/mixed_precision/
+keras.mixed_precision.set_global_policy('mixed_float16')
+
+# Clear GPU memory
+tensorflow.keras.backend.clear_session()
 
 class MultiOutputModel:
 
@@ -139,19 +149,14 @@ class MultiOutputModel:
         model_input = self._model_input()
         base_model_output = self._build_base_model(model_input)
         A2Mid2E_B = self._build_A2Mid2E(base_model_output)  # Use base model's output
-        self.model = keras.Model(inputs=model_input, outputs=A2Mid2E_B, name="Mid-Level Features")
+        self.model = keras.Model(inputs=model_input, outputs=A2Mid2E_B, name="Mid-Level_Features")
         self.model.summary()
     # def compile(self, learning_rate=0.0001):
     def compile(self, learning_rate=0.0005):
 
         optimizer = keras.optimizers.Adam(learning_rate=learning_rate)
         self.model.compile(optimizer=optimizer,
-                           loss={
-                            #    'A2E_branch': 'categorical_crossentropy',
-                            #    'A2Mid2E_branch': 'categorical_crossentropy',
-                               'A2Mid2E_branch': 'binary_crossentropy',
-                            #    'A2Mid2EJoint_branch': 'mse'
-                               },metrics=["accuracy"]
+                           loss='binary_crossentropy', metrics=["accuracy"]
                            )
 
     def train(self, x_train, y_train, batch_size, num_epochs):
