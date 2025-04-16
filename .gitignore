@@ -1,7 +1,16 @@
-Data/*
+*.keras
+Emotify/classical/*.mp3
+Emotify/electronic/*.mp3
+Emotify/pop/*.mp3
+Emotify/rock/*.mp3
+Emotify/spectrograms/*.npy
+
+Mid-Level Perceptual Features/audio/*
+Mid-Level Perceptual Features/spectrograms/*
+
+
 Processed Dataset/*
-Emotify/*
-Mid-Level Perceptual Features/*
+Data/*
 *.zip
 # Others
 *:Zone.Identifier

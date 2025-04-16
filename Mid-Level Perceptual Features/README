@@ -1,0 +1,32 @@
+METADATA
+
+This file describes the content of the dataset and lists the source where the audio file is coming from. Most of the audio files are provided in the folder audio. 
+
+############################################################
+
+AUDIO 
+
+IDs 1 to 3575 are provided with the dataset, 3575 to 5000 can be downloaded elsewhere. See the metadata file to match the ID of the file in the dataset to the ID in the source. 
+
+Soundtracks: 
+
+Eerola, T. & Vuoskoski, J. K. (2011). A comparison of the discrete and dimensional models of emotion in music. Psychology of Music, 39(1), 18-49.
+https://www.jyu.fi/hytk/fi/laitokset/mutku/en/research/projects2/past-projects/coe/materials/emotion/soundtracks/Index
+
+Bimodal and multimodal datasets: 
+
+Bi-modal (audio and lyrics) emotion dataset (Russell's model) (2016)
+Multi-modal MIREX-like emotion dataset (2013)
+http://mir.dei.uc.pt/downloads.html
+
+############################################################
+
+JAMENDO DOWNLOAD LINKS
+
+This file contains links to full Jamendo files, which can be identified by their jamendo IDs
+
+############################################################
+
+ANNOTATIONS
+
+This file contains averaged annotations for each 15 second segment
