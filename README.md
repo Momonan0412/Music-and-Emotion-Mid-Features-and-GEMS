@@ -45,37 +45,7 @@ To evaluate the model's performance at different thresholds, the following metri
 
 - **Based on the model by [Chowdhury et al.](https://arxiv.org/abs/1907.03572)**
 
-┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┓  
-┃ Layer (type)                    ┃ Output Shape           ┃     Param #   ┃  
-┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━┩  
-│ input_layer (InputLayer)        │ (None, 256, 1292, 1)   │           0   │  
-│ conv2d (Conv2D)                 │ (None, 126, 644, 64)   │       1,664   │  
-│ batch_normalization             │ (None, 126, 644, 64)   │         256   │  
-│ conv2d_1 (Conv2D)               │ (None, 126, 644, 64)   │      36,928   │  
-│ batch_normalization_1           │ (None, 126, 644, 64)   │         256   │  
-│ max_pooling2d (MaxPooling2D)    │ (None, 63, 322, 64)    │           0   │  
-│ dropout (Dropout)               │ (None, 63, 322, 64)    │           0   │  
-│ conv2d_2 (Conv2D)               │ (None, 63, 322, 128)   │      73,856   │  
-│ batch_normalization_2           │ (None, 63, 322, 128)   │         512   │  
-│ conv2d_3 (Conv2D)               │ (None, 63, 322, 128)   │     147,584   │  
-│ batch_normalization_3           │ (None, 63, 322, 128)   │         512   │  
-│ max_pooling2d_1 (MaxPooling2D)  │ (None, 31, 161, 128)   │           0   │  
-│ dropout_1 (Dropout)             │ (None, 31, 161, 128)   │           0   │  
-│ conv2d_4 (Conv2D)               │ (None, 31, 161, 256)   │     295,168   │  
-│ batch_normalization_4           │ (None, 31, 161, 256)   │       1,024   │  
-│ conv2d_5 (Conv2D)               │ (None, 31, 161, 256)   │     590,080   │  
-│ batch_normalization_5           │ (None, 31, 161, 256)   │       1,024   │  
-│ conv2d_6 (Conv2D)               │ (None, 31, 161, 384)   │     885,120   │  
-│ batch_normalization_6           │ (None, 31, 161, 384)   │       1,536   │  
-│ conv2d_7 (Conv2D)               │ (None, 31, 161, 512)   │   1,769,984   │  
-│ batch_normalization_7           │ (None, 31, 161, 512)   │       2,048   │  
-│ conv2d_8 (Conv2D)               │ (None, 31, 161, 256)   │   1,179,904   │  
-│ batch_normalization_8           │ (None, 31, 161, 256)   │       1,024   │  
-│ global_average_pooling2d        │ (None, 1, 1, 256)      │           0   │  
-│ InsertedGlobalAveragePooling2D  │ (None, 256)            │           0   │  
-│ InsertedDense2 (Dense)          │ (None, 256)            │      65,792   │  
-│ InsertedDense1 (Dense)          │ (None, 7)              │       1,799   │  
-└─────────────────────────────────┴────────────────────────┴───────────────┘
+![alt text](image.png)
 
 > 🛠️ **Note:**  
 The final two Dense layers can be fine-tuned to adjust the model for different output dimensions or to improve performance on specific downstream tasks.
