@@ -42,16 +42,16 @@ class AudioPreprocessor:
                 
                 print(type(spectrogram_data))
                 print(type(label))
+                break
+                # # Append to self.data dictionary
+                # self.data["train"].append(spectrogram_data)
+                # self.data["label"].append(label)
                 
-                # Append to self.data dictionary
-                self.data["train"].append(spectrogram_data)
-                self.data["label"].append(label)
-                
-                # Debugging prints
-                print(f"Audio ID: {audio_id}")
-                print("Spectrogram Data:", spectrogram_data)
-                print("Label (Multi-Hot Encoded):", label)
-                print("-" * 100)
+                # # Debugging prints
+                # print(f"Audio ID: {audio_id}")
+                # print("Spectrogram Data:", spectrogram_data)
+                # print("Label (Multi-Hot Encoded):", label)
+                # print("-" * 100)
     
     def _save_to_h5(self, h5_file_path):
         if self.data != None:
@@ -69,4 +69,4 @@ if __name__ == "__main__":
     print(type(ap._get_data()['train']))
     print(type(ap._get_data()['label']))
     # ap._save_to_h5("Data/Emotify_Data.h5")
-    ap._save_to_h5("Data/Mid-Level_Perceptual_Features_Data.h5")
+    # ap._save_to_h5("Data/Mid-Level_Perceptual_Features_Data.h5")
