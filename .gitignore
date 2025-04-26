@@ -1,3 +1,5 @@
+*.keras
+models/*
 Data/*
 Processed Dataset/*
 Emotify/*
