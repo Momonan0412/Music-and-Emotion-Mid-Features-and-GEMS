@@ -67,7 +67,7 @@ class EmotifyAnnotator:
                 hf.create_dataset("label", data=np.array(self.data["label"], dtype=np.int8)) # int8 for binary labels
 
 if __name__ == "__main__":
-    model_dir = "fine-tuned_model.keras"
+    model_dir = "checkpoint_epoch-59_acc-0.8700_loss-0.0035.keras"
     da = EmotifyAnnotator(model_dir)
     da._load_data()
     da._load_model()
