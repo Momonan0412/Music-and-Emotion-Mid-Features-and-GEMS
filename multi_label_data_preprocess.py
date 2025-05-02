@@ -30,7 +30,6 @@ class AudioPreprocessor:
                 path = os.path.join(root, file)
                 
                 row = metadata[metadata[column_name] == audio_id]
-                print(row)
                 # Load the spectrogram data
                 spectrogram_data = np.load(path)
                 if root.split('/')[0] == "Emotify":
@@ -40,8 +39,8 @@ class AudioPreprocessor:
                     label = row.values[:, 1:][0]  # Multi-hot encoded label
                     print("Mid-Level Perceptual Features! ")
                 
-                print(type(spectrogram_data))
-                print(type(label))
+                print(spectrogram_data)
+                print(label)
                 break
                 # # Append to self.data dictionary
                 # self.data["train"].append(spectrogram_data)
