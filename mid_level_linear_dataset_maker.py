@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 from keras.api.models import load_model, Model
 
-class EmotifyAnnotator:
+class MidLevelLinearDatasetMaker:
     def __init__(self, directory):
         self.__directory = directory
         self.__data = None
@@ -71,7 +71,7 @@ class EmotifyAnnotator:
 
 if __name__ == "__main__":
     model_dir = "model_epoch_86_acc_0.94_loss_0.01.keras"
-    da = EmotifyAnnotator(model_dir)
+    da = MidLevelLinearDatasetMaker(model_dir)
     da._load_data()
     da._load_model()
     da._annotator()
