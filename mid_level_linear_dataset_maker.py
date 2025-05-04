@@ -70,7 +70,7 @@ class MidLevelLinearDatasetMaker:
                 hf.create_dataset("label", data=np.array(self.data["label"], dtype=np.int8)) # int8 for binary labels
 
 if __name__ == "__main__":
-    model_dir = "model_epoch_86_acc_0.94_loss_0.01.keras"
+    model_dir = "Mid-Level_Perceptual_Features_Multi-Label Version 1.keras"
     da = MidLevelLinearDatasetMaker(model_dir)
     da._load_data()
     da._load_model()

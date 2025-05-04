@@ -39,18 +39,15 @@ class AudioPreprocessor:
                     label = row.values[:, 1:][0]  # Multi-hot encoded label
                     print("Mid-Level Perceptual Features! ")
                 
-                print(spectrogram_data)
-                print(label)
-                break
-                # # Append to self.data dictionary
-                # self.data["train"].append(spectrogram_data)
-                # self.data["label"].append(label)
+                # Append to self.data dictionary
+                self.data["train"].append(spectrogram_data)
+                self.data["label"].append(label)
                 
-                # # Debugging prints
-                # print(f"Audio ID: {audio_id}")
-                # print("Spectrogram Data:", spectrogram_data)
-                # print("Label (Multi-Hot Encoded):", label)
-                # print("-" * 100)
+                # Debugging prints
+                print(f"Audio ID: {audio_id}")
+                print("Spectrogram Data:", spectrogram_data)
+                print("Label (Multi-Hot Encoded):", label)
+                print("-" * 100)
     
     def _save_to_h5(self, h5_file_path):
         if self.data != None:
@@ -59,13 +56,15 @@ class AudioPreprocessor:
                 hf.create_dataset("label", data=np.array(self.data["label"], dtype=np.int8)) # int8 for binary labels
 
 if __name__ == "__main__":
-    spectrogram_file_path = "Mid-Level Perceptual Features/spectrograms"
-    metadata_file_path = "Mid-Level Perceptual Features/multi_hot_encoded_mid_level_features.csv"
-    # spectrogram_file_path = "Emotify/spectrograms"
+    # spectrogram_file_path = "Mid-Level Perceptual Features/spectrograms"
+    # metadata_file_path = "Mid-Level Perceptual Features/multi_hot_encoded_mid_level_features.csv"
+    spectrogram_file_path = "Emotify/spectrograms"
     # metadata_file_path = "Emotify/multi_hot_encoded_emotify.csv"
+    metadata_file_path = "Emotify/divided_emotify.csv"
     ap = AudioPreprocessor(spectrogram_file_path, metadata_file_path)
     ap._file_handler()
     print(type(ap._get_data()['train']))
     print(type(ap._get_data()['label']))
+    ap._save_to_h5("Data/Emotify_Data_For_Correlation.h5")
     # ap._save_to_h5("Data/Emotify_Data.h5")
     # ap._save_to_h5("Data/Mid-Level_Perceptual_Features_Data.h5")
