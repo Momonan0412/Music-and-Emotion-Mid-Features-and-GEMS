@@ -3,7 +3,7 @@
 
 This multi-label classification model was developed to annotate the existing Emotify dataset, with the goal of identifying the relationship or correlation between emotional annotations and mid-level perceptual music features.
 
-Version 2 of the re-annotated and multi-label classification model was deemed ineffective and therefore not used. Only Version 1 of the model was utilized. All layers of the model were frozen to preserve the learned weights. A linear probe was then added to identify the relationship between emotional annotations and mid-level perceptual music features, helping to remove the "black box" nature of the model.
+[Version 2](https://drive.google.com/file/d/1KMExzml767YGk182DgpseYi5tKx9kg1f/view?usp=drive_link) of the re-annotated and multi-label classification model was deemed ineffective and therefore not used. Only [Version 1](https://drive.google.com/file/d/15TCH8NjuAfjhw1L4a2R4bxTq1PSWrPdC/view?usp=drive_link) of the model was utilized. All layers of the model were frozen to preserve the learned weights. A linear probe was then added to identify the relationship between emotional annotations and mid-level perceptual music features, helping to remove the "black box" nature of the model.
 
 These two datasets and their annotations will be used in my future personal research, aiming to produce high-quality therapeutic music.
 
