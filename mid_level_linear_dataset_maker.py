@@ -20,7 +20,7 @@ class MidLevelLinearDatasetMaker:
         }
         
     def _load_data(self):
-        with h5py.File("Data/Emotify_Data.h5", "r") as hf:
+        with h5py.File("Data/Emotify_Data_For_Correlation.h5", "r") as hf:
             train = hf["train"][:]
             label = hf["label"][:]
         data = { "train": train, "label": label}
@@ -63,12 +63,12 @@ class MidLevelLinearDatasetMaker:
     def _get_data(self):
         return self.data
 
-    def _save_to_h5(self, h5_file_path="Data/Mid_Level_Linear_Dataset_Data.h5"):
+    def _save_to_h5(self, h5_file_path="Data/Mid_Level_Linear_Dataset_Data_For_Correlation.h5"):
         if self.data != None:
             with h5py.File(h5_file_path, "w") as hf:
                 hf.create_dataset("train", data=np.array(self.data["train"], dtype=np.float32)) # Keeps float32 for DL efficiency
-                hf.create_dataset("label", data=np.array(self.data["label"], dtype=np.int8)) # int8 for binary labels
-
+                # hf.create_dataset("label", data=np.array(self.data["label"], dtype=np.int8)) # int8 for binary labels
+                hf.create_dataset("label", data=np.array(self.data["label"], dtype=np.float32)) # For Correlation
 if __name__ == "__main__":
     model_dir = "Mid-Level_Perceptual_Features_Multi-Label Version 1.keras"
     da = MidLevelLinearDatasetMaker(model_dir)

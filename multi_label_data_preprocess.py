@@ -53,7 +53,8 @@ class AudioPreprocessor:
         if self.data != None:
             with h5py.File(h5_file_path, "w") as hf:
                 hf.create_dataset("train", data=np.array(self.data["train"], dtype=np.float32)) # Keeps float32 for DL efficiency
-                hf.create_dataset("label", data=np.array(self.data["label"], dtype=np.int8)) # int8 for binary labels
+                # hf.create_dataset("label", data=np.array(self.data["label"], dtype=np.int8)) # int8 for binary labels
+                hf.create_dataset("label", data=np.array(self.data["label"], dtype=np.float32)) # For Correlation
 
 if __name__ == "__main__":
     # spectrogram_file_path = "Mid-Level Perceptual Features/spectrograms"

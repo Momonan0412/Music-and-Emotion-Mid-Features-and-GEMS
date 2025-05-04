@@ -83,4 +83,7 @@ To evaluate the model's performance at different thresholds, the following metri
 The last few layers can be fine-tuned to adjust the model for different output dimensions or to improve performance on specific downstream tasks.
 
 ### Model Weights Mapping Mid-Level Audio Features to GEMS Emotion Dimensions
-![My Image](image.png)
+![My Image](image1.png)
+
+### Correlation Between Mid-Level Features and GEMS Emotions
+![My Image](image2.png)
