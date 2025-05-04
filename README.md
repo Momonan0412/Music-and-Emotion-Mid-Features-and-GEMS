@@ -1,17 +1,20 @@
 
 # 🎧 **Mid-Level Perceptual Features Multi-Label Classification Model**
 
-This multi-label classification model will be used to annotate the existing **Emotify dataset** with the goal of identifying the relationship or correlation between **emotional annotations** and **mid-level perceptual music features**.
+This multi-label classification model was developed to annotate the existing Emotify dataset, with the goal of identifying the relationship or correlation between emotional annotations and mid-level perceptual music features.
+
+Version 2 of the re-annotated and multi-label classification model was deemed ineffective and therefore not used. Only Version 1 of the model was utilized. All layers of the model were frozen to preserve the learned weights. A linear probe was then added to identify the relationship between emotional annotations and mid-level perceptual music features, helping to remove the "black box" nature of the model.
+
+These two datasets and their annotations will be used in my future personal research, aiming to produce high-quality therapeutic music.
 
 ---
 
-## 📊 **Model Performance Overview**
-
-- **Training Accuracy**: `0.7782`  
-- **Training Loss**: `0.0018`  
-- **Validation Accuracy**: `0.7840`  
-- **Validation Loss**: `0.0016`  
-
+## 📊 **Model Version 1 Performance Overview**
+Feeding Emotify Dataset
+- **Training Accuracy**: `0.7171`  
+- **Training Loss**: `0.0575`  
+- **Validation Accuracy**: `0.7124`  
+- **Validation Loss**: `0.0551`
 ---
 
 ## 📈 **Threshold-Based Evaluation (Macro Averaged Metrics)**
@@ -19,28 +22,28 @@ This multi-label classification model will be used to annotate the existing **Em
 To evaluate the model's performance at different thresholds, the following metrics were calculated:
 
 ### **Threshold: 0.3**
-- **Precision**: 0.9991  
-- **Recall**: 0.9996  
-- **F1 Score**: 0.9993  
-- **Accuracy**: 0.9980  
+- **Precision**: 0.9132  
+- **Recall**: 1.0000  
+- **F1 Score**: 0.9538  
+- **Accuracy**: 0.9100  
 
 ### **Threshold: 0.4**
-- **Precision**: 0.9992  
-- **Recall**: 0.9996  
-- **F1 Score**: 0.9994  
-- **Accuracy**: 0.9984  
+- **Precision**: 1.0000  
+- **Recall**: 1.0000  
+- **F1 Score**: 1.0000  
+- **Accuracy**: 1.0000  
 
 ### **Threshold: 0.5**
-- **Precision**: 0.9992  
-- **Recall**: 0.9983  
-- **F1 Score**: 0.9988  
-- **Accuracy**: 0.9976  
+- **Precision**: 1.0000  
+- **Recall**: 0.8992  
+- **F1 Score**: 0.9461  
+- **Accuracy**: 0.8850  
 
 ### **Threshold: 0.6**
-- **Precision**: 0.9992  
-- **Recall**: 0.9983  
-- **F1 Score**: 0.9988  
-- **Accuracy**: 0.9976  
+- **Precision**: 1.0000  
+- **Recall**: 0.8477  
+- **F1 Score**: 0.9159  
+- **Accuracy**: 0.8175  
 ### VGG-style Network for Predicting Mid-Level Features from Audio
 
 - **Based on the model by [Chowdhury et al.](https://arxiv.org/abs/1907.03572)**
@@ -78,3 +81,6 @@ To evaluate the model's performance at different thresholds, the following metri
 
 > 🛠️ **Note:**  
 The last few layers can be fine-tuned to adjust the model for different output dimensions or to improve performance on specific downstream tasks.
+
+### Model Weights Mapping Mid-Level Audio Features to GEMS Emotion Dimensions
+![My Image](image.png)
